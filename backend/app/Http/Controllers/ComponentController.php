@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Component;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ComponentController extends Controller
 {
@@ -14,7 +15,14 @@ class ComponentController extends Controller
      */
     public function index()
     {
-        //
+        $j = [];;
+
+        try {
+            $components = DB::table('components')
+            ->select('components.name', 'components.');
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
     }
 
     /**
