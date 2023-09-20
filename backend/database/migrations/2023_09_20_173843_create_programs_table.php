@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('programs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->unsignedBigInteger('coordination');
-            $table->foreign('coordination')->references('id')->on('coordinations');
+            $table->unsignedBigInteger('coordination_id');
+            $table->foreign('coordination_id')->references('id')->on('coordinations')->onDelete('restrict');
             $table->enum('type', ['tecnico', 'tecnologo']);
-            $table->string('code');
+            $table->integer('code');
             $table->timestamps();
         });
     }

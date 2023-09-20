@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->string('title');
             $table->string('description');
             $table->string('file');
-            $table->date('activation_date');
+            $table->date('activation_date')->nullable();
             $table->date('due_date');
 
             $table->unsignedBigInteger('learning_achievement_id');
