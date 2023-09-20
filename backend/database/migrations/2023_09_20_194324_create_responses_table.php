@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('evidence_id');
             $table->foreign('evidence_id')->references('id')->on('evidences')->onDelete('restrict');
 
-            $table->string('comment');
-            $table->string('feedback');
+            $table->string('comment')->nullable();
+            $table->string('feedback')->nullable();
             $table->string('file');
 
             $table->unsignedBigInteger('student_id');
