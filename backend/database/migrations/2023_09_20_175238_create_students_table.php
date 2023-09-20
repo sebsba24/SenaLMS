@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
+            
             $table->unsignedBigInteger('study_sheets_id');
             $table->foreign('study_sheets_id')->references('id')->on('study_sheets')->onDelete('restrict');
             $table->timestamps();

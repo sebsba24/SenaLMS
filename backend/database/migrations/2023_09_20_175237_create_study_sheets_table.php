@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('number');
             $table->date('start_date');
             $table->date('end_date');
+            $table->boolean('state');
 
             $table->unsignedBigInteger('phase_id');
             $table->foreign('phase_id')->references('id')->on('phases')->onDelete('restrict');

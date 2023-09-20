@@ -19,9 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('phase_id');
             $table->foreign('phase_id')->references('id')->on('phases');
 
-            $table->unsignedBigInteger('instructor_id');
-            $table->foreign('instructor_id')->references('id')->on('instructors')->onDelete('restrict');
-
             $table->unsignedBigInteger('program_id');
             $table->foreign('program_id')->references('id')->on('programs')->onDelete('restrict');
             

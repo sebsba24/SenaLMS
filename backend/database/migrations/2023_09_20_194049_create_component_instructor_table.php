@@ -16,10 +16,11 @@ return new class extends Migration {
             $table->id();
             $table->unsignedBigInteger('component_id');
             $table->unsignedBigInteger('instructor_id');
+            $table->unsignedBigInteger('study_sheets_id');
 
             $table->foreign('component_id')->references('id')->on('components')->onDelete('restrict');
             $table->foreign('instructor_id')->references('id')->on('instructors')->onDelete('restrict');
-            $table->timestamps();
+            $table->foreign('study_sheets_id')->references('id')->on('study_sheets')->onDelete('restrict');
         });
     }
 
