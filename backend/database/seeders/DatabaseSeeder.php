@@ -278,8 +278,8 @@ class DatabaseSeeder extends Seeder
                 'title' => 'Trabajo chevere',
                 'description' => 'Envia',
                 'file' => 'ruta',
-                'activation_date' => null,
-                'due_date' => 2023-09-20,
+                'activation_date' => 2022 - 01 - 04,
+                'due_date' => 2022 - 01 - 04,
                 'learning_achievement_id' => 1,
                 'instructor_id' => 1,
             ],
@@ -288,13 +288,61 @@ class DatabaseSeeder extends Seeder
                 'description' => 'Evidencia 1',
                 'file' => 'ruta',
                 'activation_date' => null,
-                'due_date' => 2023-10-04,
+                'due_date' => 2023 - 10 - 04,
                 'learning_achievement_id' => 2,
                 'instructor_id' => 2,
             ],
         ];
         foreach ($evidences as $evidenceData) {
             \App\Models\Evidence::factory()->create($evidenceData);
+        }
+
+        //?Migracion de la tabla componente_instructor
+        $componentInstructors = [
+            [
+                'component_id' => 1,
+                'instructor_id' => 1,
+                'study_sheets_id' => 1,
+            ],
+            [
+                'component_id' => 1,
+                'instructor_id' => 1,
+                'study_sheets_id' => 2,
+            ],
+            [
+                'component_id' => 2,
+                'instructor_id' => 2,
+                'study_sheets_id' => 3,
+            ],
+            [
+                'component_id' => 2,
+                'instructor_id' => 2,
+                'study_sheets_id' => 4,
+            ],
+        ];
+        foreach ($componentInstructors as $componentInstructorData) {
+            \App\Models\ComponentInstructor::factory()->create($componentInstructorData);
+        }
+
+        //?Migracion de tabla responses
+        $responses = [
+            [
+                'evidence_id' => 1,
+                'comment' => 'muy dificil',
+                'feedback' => 'bien',
+                'file' => 'ruta',
+                'student_id' => 1,
+            ],
+            [
+                'evidence_id' => 2,
+                'comment' => null,
+                'feedback' => null,
+                'file' => 'ruta2',
+                'student_id' => 2
+            ],
+        ];
+        foreach ($responses as $responseData) {
+            \App\Models\Response::factory()->create($responseData);
         }
     }
 }
