@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Component extends Model
 {
     use HasFactory;
+
+    protected $table = 'components';
+
+    protected $fillable = [
+        'name',
+        'phase_id',
+        'program_id',
+    ];
 }

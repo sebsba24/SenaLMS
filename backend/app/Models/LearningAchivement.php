@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class LearningAchivement extends Model
 {
     use HasFactory;
+
+    protected $table = 'learning_achivements';
+
+    protected $fillable = [
+        'name',
+        'competence_id',
+        'code'
+    ];
 }

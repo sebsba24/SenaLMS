@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Coordination extends Model
 {
     use HasFactory;
-    protected $table = 'roles';
+    protected $table = 'coordinations';
     protected $fillable = ['name'];
 }
